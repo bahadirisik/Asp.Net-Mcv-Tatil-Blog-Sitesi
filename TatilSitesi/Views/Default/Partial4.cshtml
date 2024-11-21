@@ -1,0 +1,30 @@
+﻿@using TatilSitesi.Models.Siniflar
+@model List<Blog>
+
+<div class="padding1" style="float:left">
+    <h4>En Beğenilen Yerler</h4>
+    <div class="box-left">
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="bot-img">
+                <img src="@Model[i].BlogImage" alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@Model[i].Aciklama.Substring(0, 100) ...</p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    <div class="box1-left">
+        @for (int i = 3; i < 6; i++)
+        {
+            <div class="bot-img">
+                <img src="@Model[i].BlogImage" alt="" />
+            </div>
+            <div class="bot-desc1">
+                <p>@Model[i].Aciklama.Substring(0, 100) ...</p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@using TatilSitesi.Models.Siniflar
+@model List<Blog>
+
+<div class="con-bot" style="width:1200px; height:150px;">
+    @foreach (var blog in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <img src="@blog.BlogImage" style="width:300px; height:150px;" alt=""  />
+
+            </div>
+            <div class="left-text">
+                <h4>@blog.Baslik</h4>
+                <span class="doller">@blog.Tarih.ToString("dd.MM.yyyy")</span>
+                <p>@blog.Aciklama.Substring(0, 100) ...</p>
+
+                <p><a href="~/Blog/BlogDetay/@blog.ID"><span class="read">Devamını Oku</span></a></p>
+            </div>
+        </div>
+    }
+
+    @*@Html.Action("Partial2", "Default")*@
+
+    <div class="clear"></div>
+</div>
